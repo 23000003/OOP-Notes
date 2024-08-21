@@ -21,6 +21,7 @@ public class MyTime {
     private int hours;
     private int minutes;
     private int seconds;
+    private boolean meredian = false; // ASsignment
     
     public void setHours(int hours){
         this.hours = (hours <= 12 && hours > 0) ? hours : 12;
@@ -45,6 +46,7 @@ public class MyTime {
     public void setSeconds(int seconds) {
         this.seconds = (seconds <= 60 && seconds >= 0) ? seconds : 0;
     }
+    
     
 //    @Override
     public String toStringx(){
@@ -71,7 +73,7 @@ public class MyTime {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MyTime other = (MyTime) obj;
+        final MyTime other = (MyTime) obj; // constant
         if (this.hours != other.hours) {
             return false;
         }
@@ -93,4 +95,42 @@ public class MyTime {
         setSeconds(sec);
     }
     
+    
+    // ASSIGNMENT
+    //12:59:59 => 1:00:00
+    public void tickBySecond(){
+        //ASSIGNMENT
+        this.seconds += 1;
+        
+    }
+    
+    public void tickByMinute(){
+        //ASSIGNMENT
+        if(this.seconds >= 60){
+            this.seconds = 0;
+            this.minutes += 1;
+        }
+    }
+    
+    public void tickByHour(){
+        //ASSIGNMMENT
+        if(this.minutes >= 60){
+            this.hours += 1;
+
+            if(this.hours >= 12){
+                this.hours = 1;
+                this.meredian = true;
+            }
+        }
+    }
+    
+    public void advanceTime(int seconds){ // advances time using the current time
+        //ASSIGNMENT
+        this.seconds += seconds;
+        
+        if(this.seconds >= 60){
+            int tempSeconds = this.seconds;
+        }
+        //use modulo
+    }
 }
