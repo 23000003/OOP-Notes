@@ -33,6 +33,9 @@ public class Bank {
         Vehicle vc1 = new Vehicle(200, 30, "RED", "BMW", "Sa Amoa", "123-345", false);
         vc1.display();
         System.out.println((vc1.accelarate()) ? "" : "Failed");
+        System.out.println((vc1.accelarate()) ? "" : "Failed");
+        vc1.repairCar();
+        System.out.println((vc1.accelarate()) ? "" : "Failed");
         vc1.display();
     }
 }

@@ -28,7 +28,14 @@ public class Vehicle {
         this.disabled = disabled;
     }
     
+    public void repairCar(){
+       this.disabled = false;
+    }
+    
     public boolean accelarate(){ // increments by 10
+        
+        if(!this.disabled) return false;
+        
         if((this.currSpeed + 10) >= this.topSpeed){
             this.disabled = true;
             return false;
