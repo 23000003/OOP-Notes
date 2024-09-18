@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employee.version1;
+package version1;
 
 /**
  *
@@ -12,6 +12,45 @@ public class CommissionEmployee {
     private double totalSales;
     private String empName;
     private int empID;
+    
+    public CommissionEmployee(double totalSales, String empName, int empID) {
+        this.totalSales = totalSales;
+        this.empName = empName;
+        this.empID = empID;
+    }
+
+    public CommissionEmployee() {
+    }
+
+    public CommissionEmployee(String empName, int empID) {
+        this.empName = empName;
+        this.empID = empID;
+    }
+
+    public double getTotalSales() {
+        return totalSales;
+    }
+
+    public void setTotalSales(double totalSales) {
+        this.totalSales = totalSales;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public int getEmpID() {
+        return empID;
+    }
+
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+    
     
     private double computeSalary(){
 //        -> less than  10,000 - 5% sales
@@ -36,15 +75,8 @@ public class CommissionEmployee {
     
     @Override
     public String toString(){
-         return "Employee Name: " + this.empName + "\n Employee ID: " + this.empID 
+         return "Employee Name: " + this.empName + "\nEmployee ID: " + this.empID 
                  + "\nTotal Sales: " + this.totalSales + "\nTotal Salary: " + this.computeSalary();
     }
-
-    public CommissionEmployee(double totalSales, String empName, int empID) {
-        this.totalSales = totalSales;
-        this.empName = empName;
-        this.empID = empID;
-    }
-
     
 }

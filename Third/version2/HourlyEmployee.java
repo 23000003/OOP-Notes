@@ -2,17 +2,65 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employee.version1;
+package version2;
 
 /**
  *
  * @author User
  */
-public class HourlyEmployee {
+public class HourlyEmployee extends Employee {
     private float totalHoursWorked;
     private double ratePerHour;
     private String empName;
     private int empID;
+
+    public HourlyEmployee(String empName, int empID) {
+        this.empName = empName;
+        this.empID = empID;
+    }
+    
+    public HourlyEmployee(float totalHoursWorked, double ratePerHour, String empName, int empID) {
+        this.totalHoursWorked = totalHoursWorked;
+        this.ratePerHour = ratePerHour;
+        this.empName = empName;
+        this.empID = empID;
+    }
+
+    public HourlyEmployee() {
+    }
+
+    public float getTotalHoursWorked() {
+        return totalHoursWorked;
+    }
+
+    public void setTotalHoursWorked(float totalHoursWorked) {
+        this.totalHoursWorked = totalHoursWorked;
+    }
+
+    public double getRatePerHour() {
+        return ratePerHour;
+    }
+
+    public void setRatePerHour(double ratePerHour) {
+        this.ratePerHour = ratePerHour;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public int getEmpID() {
+        return empID;
+    }
+
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+    
     
     private double computeSalary(){
 //        -> total hours worked * rate per hour
@@ -36,15 +84,8 @@ public class HourlyEmployee {
     
     @Override
     public String toString(){
-         return "Employee Name: " + this.empName + "\n Employee ID: " + this.empID + "\nRates Per Hour: " + this.ratePerHour
+         return "Employee Name: " + this.empName + "\nEmployee ID: " + this.empID + "\nRates Per Hour: " + this.ratePerHour
                  + "\nTotal Hours Worked: " + this.totalHoursWorked + "\nTotal Salary: " + this.computeSalary();
-    }
-
-    public HourlyEmployee(float totalHoursWorked, double ratePerHour, String empName, int empID) {
-        this.totalHoursWorked = totalHoursWorked;
-        this.ratePerHour = ratePerHour;
-        this.empName = empName;
-        this.empID = empID;
     }
    
 }

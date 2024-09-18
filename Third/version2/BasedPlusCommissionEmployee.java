@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.employee.version1;
+package version2;
 
 /**
  *
  * @author User
  */
-public class BasedPlusCommissionEmployee {
+public class BasedPlusCommissionEmployee extends Employee {
     private double totalSales;
     private double baseSalary;
     private String empName;
@@ -88,7 +88,7 @@ public class BasedPlusCommissionEmployee {
     
     @Override
     public String toString(){
-         return "Employee Name: " + this.empName + "\n Employee ID: " + this.empID + "\nBase Salary" + this.baseSalary
+         return "Employee Name: " + this.empName + "\nEmployee ID: " + this.empID + "\nBase Salary: " + this.baseSalary
                  + "\nTotal Sales: " + this.totalSales + "\nTotal Salary: " + this.computeSalary();
     }
     
