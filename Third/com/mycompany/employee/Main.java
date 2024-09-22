@@ -3,46 +3,60 @@
  */
 
 package com.mycompany.employee;
-import version1.*;
+//import version1.*;
+import version2.*;
 
 /**
  *
  * @author User
  */
-public class Employee {
+public class Main {
 
     public static void main(String[] args) {
         
-        // USE GETTER AND SETTER and 3 CONSTRUCTORS See BasedPlus Class
+        
+        Employee x = new CommissionEmployee(5431, "CEKenny", 153032);
+        x.displayEmployeeDetails(); // the toString() is overridden in CommissionEmp
+          
+        Employee y = new BasedPlusCommissionEmployee(1342, 253,"BPCEKenny", 230003);
+        y.displayEmployeeDetails(); // the toString() is overridden in BPCEmp
+    }
+}
+
+
+
+// ========================== VERSION 1 ===========================
+
+// USE GETTER AND SETTER and 3 CONSTRUCTORS See BasedPlus Class
         
         // =====================  HOURLY EMPLOYEE ======================
         // public HourlyEmployee(float totalHoursWorked, double ratePerHour, String empName, int empID)
         
         
-        System.out.println("\n========== Constructor 1 ==========");
-        HourlyEmployee myHourly1 = new HourlyEmployee(41, 100, "Kenny", 23000003);
-        myHourly1.displayHourlyEmployee(); // DISPLAY 1
-        System.out.println(" ");
-
-        System.out.println("\n========== Constructor 2 ==========");
-
-        HourlyEmployee myHourly2 = new HourlyEmployee("IamConstruct2", 23125213);
-        myHourly2.displayHourlyEmployee(); // DISPLAY 2
-        System.out.println(" ");
-        myHourly2.setTotalHoursWorked(51);
-        myHourly2.setRatePerHour(1000);
-        myHourly2.displayHourlyEmployee(); // DISPLAY 3
-
-        System.out.println("\n========== Constructor 3 ==========");
-        
-        HourlyEmployee myHourly3 = new HourlyEmployee();
-        myHourly3.displayHourlyEmployee(); // DISPLAY 4
-        System.out.println(" ");
-        myHourly3.setEmpID(105434);
-        myHourly3.setEmpName("MY Hourly 3");
-        myHourly3.setRatePerHour(12);
-        myHourly3.setTotalHoursWorked(4);
-        myHourly3.displayHourlyEmployee(); // DISPLAY 5
+//        System.out.println("\n========== Constructor 1 ==========");
+//        HourlyEmployee myHourly1 = new HourlyEmployee(41, 100, "Kenny", 23000003);
+//        myHourly1.displayHourlyEmployee(); // DISPLAY 1
+//        System.out.println(" ");
+//
+//        System.out.println("\n========== Constructor 2 ==========");
+//
+//        HourlyEmployee myHourly2 = new HourlyEmployee("IamConstruct2", 23125213);
+//        myHourly2.displayHourlyEmployee(); // DISPLAY 2
+//        System.out.println(" ");
+//        myHourly2.setTotalHoursWorked(51);
+//        myHourly2.setRatePerHour(1000);
+//        myHourly2.displayHourlyEmployee(); // DISPLAY 3
+//
+//        System.out.println("\n========== Constructor 3 ==========");
+//        
+//        HourlyEmployee myHourly3 = new HourlyEmployee();
+//        myHourly3.displayHourlyEmployee(); // DISPLAY 4
+//        System.out.println(" ");
+//        myHourly3.setEmpID(105434);
+//        myHourly3.setEmpName("MY Hourly 3");
+//        myHourly3.setRatePerHour(12);
+//        myHourly3.setTotalHoursWorked(4);
+//        myHourly3.displayHourlyEmployee(); // DISPLAY 5
 //        
         
         
@@ -134,7 +148,3 @@ public class Employee {
 //        z3.setBaseSalary(1231);
 //        z3.setTotalSales(663);
 //        z3.displayHourlyEmployee(); // DISPLAY 5
-        
-        
-    }
-}

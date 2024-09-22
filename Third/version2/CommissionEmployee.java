@@ -27,6 +27,43 @@ public class CommissionEmployee extends Employee {
         super(empName, empID);
         this.totalSales = totalSales;
     }
+
+    public double getTotalSales() {
+        return totalSales;
+    }
+
+    public void setTotalSales(double totalSales) {
+        this.totalSales = totalSales;
+    }
     
+    protected double computeSalary(double baseSalary){
+        
+        double totalSales;
+        
+        if(this.totalSales < 10000){
+            totalSales = this.totalSales * 0.05 + baseSalary;
+        }else if(this.totalSales >= 10000 && this.totalSales < 100000){
+            totalSales = this.totalSales * 0.10;
+        }else if(this.totalSales >= 100000 && this.totalSales < 1000000){
+            totalSales = this.totalSales * 0.20 + baseSalary;
+        }else{
+            totalSales = this.totalSales * 0.30 + baseSalary;
+        }
+        
+        return totalSales;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()); // Calls Employee's toString
+        sb.append("Total Sales: ").append(this.getTotalSales()).append("\n");
+        sb.append("Salary: ").append(this.computeSalary(0)).append("\n");
+        return sb.toString();
+    }
+    
+    public void displayCommissionEmployee(){
+        System.out.println(this.toString());
+    }
     
 }

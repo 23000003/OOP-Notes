@@ -45,5 +45,16 @@ public class Employee {
         this.empID = empID;
     }
     
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Employee ID: ").append(this.getEmpID()).append("\n");
+        sb.append("Employee Name: ").append(this.getEmpName()).append("\n");
+        
+        return sb.toString();
+    }
     
+    public void displayEmployeeDetails(){
+        System.out.println(this); //toString() Override
+    }
 }

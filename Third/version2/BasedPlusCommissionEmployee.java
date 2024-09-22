@@ -27,6 +27,24 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
         super(totalSales, empName, empID);
         this.baseSalary = baseSalary;
     }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()); // Calls Employee's toString
+        sb.append("Base Salary: ").append(this.getBaseSalary()).append("\n");
+        return sb.toString();
+    }
     
+    public void displayBasedPEmployee(){
+        System.out.println(this.toString());
+    }
 }
