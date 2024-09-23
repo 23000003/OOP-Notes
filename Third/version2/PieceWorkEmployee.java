@@ -16,6 +16,10 @@ public class PieceWorkEmployee extends Employee {
     public PieceWorkEmployee() {
     }
 
+    public PieceWorkEmployee(Employee nEmp) {
+        this(0,0, nEmp.getEmpName(), nEmp.getEmpID());
+    }
+    
     public PieceWorkEmployee(String empName, int empID) {
         this(0,0, empName, empID);
     }
@@ -24,9 +28,29 @@ public class PieceWorkEmployee extends Employee {
         this(totalPiecesFinished, ratePerPiece, null, 0);
     }
 
+    public PieceWorkEmployee(int totalPiecesFinished, double ratePerPiece, Employee nEmp) {
+        this(totalPiecesFinished, ratePerPiece, nEmp.getEmpName(), nEmp.getEmpID());
+    }
+    
     public PieceWorkEmployee(int totalPiecesFinished, double ratePerPiece, String empName, int empID) {
         super(empName, empID);
         this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
+    }
+
+    public int getTotalPiecesFinished() {
+        return totalPiecesFinished;
+    }
+
+    public void setTotalPiecesFinished(int totalPiecesFinished) {
+        this.totalPiecesFinished = totalPiecesFinished;
+    }
+
+    public double getRatePerPiece() {
+        return ratePerPiece;
+    }
+
+    public void setRatePerPiece(double ratePerPiece) {
         this.ratePerPiece = ratePerPiece;
     }
    

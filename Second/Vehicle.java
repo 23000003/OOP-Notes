@@ -54,19 +54,44 @@ public class Vehicle {
         }
     }
 
-    @Override
-    public String toString() {
-        return "The " + this.color + " " + this.model + " with a Plate No. " + 
-                this.plateNumber + " is accelerating from 0Kph to " + this.currSpeed + "Kph\n";
+    // @Override
+    public String toStringAccelerate() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("The ").append(this.color).append(" ").append(this.model)
+                .append(" with a Plate No. ").append(this.plateNumber).append(" is accelerating from 0Kph to ")
+                .append(this.currSpeed).append("Kph");
+        
+        return sb.toString();
     }
 
+    public String toStringDecelerate(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("The ").append(this.color).append(" ").append(this.model)
+                .append(" with a Plate No. ").append(this.plateNumber)
+                .append(" is deccelerating from ").append(this.topSpeed).append(" to ")
+                .append(this.currSpeed).append("Kph");
+        
+        return sb.toString();
+    }
+
+    public String carDetails(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Model: ").append(this.model).append("\n")
+                .append("Plate Number: ").append(this.plateNumber).append("\n")
+                .append("Color: ").append(this.color).append("\n")
+                .append("Manufacturer: ").append(this.manufacturer).append("\n")
+                .append("Top Speed: ").append(this.topSpeed).append("\n")
+                .append("Current Speed: ").append(this.currSpeed).append("\n")
+                .append("Disabled: ").append(this.disabled).append("\n");
+        
+        return sb.toString();
+    }
     
-    public void display(){
-        System.out.println(this.toString());
+    public void display(String disp){
+        System.out.println(disp);
     }
 
 }
-
 
 
 

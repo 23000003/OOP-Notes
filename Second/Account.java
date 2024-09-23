@@ -58,8 +58,7 @@ public class Account {
     }
     
     public boolean transfer(Account another, double amount){
-        if(!divisibleBy(amount)) return false;
-        
+                
         another.currBalance += amount;
         
         return withdraw(amount);

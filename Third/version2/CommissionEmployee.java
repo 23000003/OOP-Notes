@@ -18,9 +18,17 @@ public class CommissionEmployee extends Employee {
     public CommissionEmployee(double totalSales) {
         this(totalSales, null, 0);
     }
+    
+    public CommissionEmployee(Employee nEmp) {
+        this(0,nEmp.getEmpName(), nEmp.getEmpID());
+    }
 
     public CommissionEmployee(String empName, int empID) {
         this(0,empName, empID);
+    }
+    
+    public CommissionEmployee(double totalSales, Employee nEmp) {
+        this(totalSales, nEmp.getEmpName(), nEmp.getEmpID());
     }
 
     public CommissionEmployee(double totalSales, String empName, int empID) {
@@ -36,18 +44,18 @@ public class CommissionEmployee extends Employee {
         this.totalSales = totalSales;
     }
     
-    protected double computeSalary(double baseSalary){
+    protected double computeSalary(){
         
         double totalSales;
         
         if(this.totalSales < 10000){
-            totalSales = this.totalSales * 0.05 + baseSalary;
+            totalSales = this.totalSales * 0.05;
         }else if(this.totalSales >= 10000 && this.totalSales < 100000){
             totalSales = this.totalSales * 0.10;
         }else if(this.totalSales >= 100000 && this.totalSales < 1000000){
-            totalSales = this.totalSales * 0.20 + baseSalary;
+            totalSales = this.totalSales * 0.20;
         }else{
-            totalSales = this.totalSales * 0.30 + baseSalary;
+            totalSales = this.totalSales * 0.30;
         }
         
         return totalSales;
@@ -56,21 +64,16 @@ public class CommissionEmployee extends Employee {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(super.toString()); // Calls Employee's toString
-        sb.append("Total Sales: ").append(this.getTotalSales()).append("\n");
-        sb.append("Salary: ").append(this.computeSalary(0)).append("\n");
-        return sb.toString();
-    }
-    
-    protected String passToString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(super.toString()); // Calls Employee's toString
-        sb.append("Total Sales: ").append(this.getTotalSales()).append("\n");
+        sb.append(super.toString())
+                .append("Total Sales: ")
+                .append(this.getTotalSales());
+
         return sb.toString();
     }
     
     public void displayCommissionEmployee(){
-        System.out.println(this.toString());
+        System.out.println(this);
+        System.out.println("Computed Salary: " + this.computeSalary() + "\n");
     }
     
 }
