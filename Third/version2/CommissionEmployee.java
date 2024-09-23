@@ -62,6 +62,13 @@ public class CommissionEmployee extends Employee {
         return sb.toString();
     }
     
+    protected String passToString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString()); // Calls Employee's toString
+        sb.append("Total Sales: ").append(this.getTotalSales()).append("\n");
+        return sb.toString();
+    }
+    
     public void displayCommissionEmployee(){
         System.out.println(this.toString());
     }

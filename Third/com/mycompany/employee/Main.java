@@ -19,7 +19,13 @@ public class Main {
         x.displayEmployeeDetails(); // the toString() is overridden in CommissionEmp
           
         Employee y = new BasedPlusCommissionEmployee(1342, 253,"BPCEKenny", 230003);
-        y.displayEmployeeDetails(); // the toString() is overridden in BPCEmp
+        y.displayEmployeeDetails();
+
+        Employee w = new HourlyEmployee(152, 600, "HEKenny", 231251);
+        w.displayEmployeeDetails();
+        
+        Employee z = new PieceWorkEmployee(543, 431, "PWEKenny", 1254321);
+        z.displayEmployeeDetails();
     }
 }
 
