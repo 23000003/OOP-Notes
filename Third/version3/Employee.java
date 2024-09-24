@@ -3,12 +3,62 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package version3;
-
+import java.time.LocalDateTime;
 /**
  *
  * @author User
  */
 public class Employee {
-    // create myDate Class => for Date hired and birthday
-    // create Name class
+    
+    private String empName;
+    private int empID;
+    
+    Name name = new Name();
+    LocalDateTime myObj = LocalDateTime.now();
+    
+    public Employee() {
+    }
+
+    public Employee(String empName) {
+        this.empName = empName;
+    }
+
+    public Employee(int empID) {
+        this.empID = empID;
+    }
+
+    public Employee(String empName, int empID) {
+        this.empName = empName;
+        this.empID = empID;
+    }
+    
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public int getEmpID() {
+        return empID;
+    }
+
+    public void setEmpID(int empID) {
+        this.empID = empID;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Employee ID: ").append(this.getEmpID()).append("\n");
+        sb.append("Employee Name: ").append(this.getEmpName()).append("\n");
+        
+        return sb.toString();
+    }
+    
+    public void displayEmployeeDetails(){
+        System.out.println(this); //toString() Override
+    }
 }

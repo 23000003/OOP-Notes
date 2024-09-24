@@ -116,6 +116,8 @@ public class Main {
         w4.displayHourlyEmployee();
         
         
+        
+        
         System.out.println("\n============ PIECE WORK EMPLOYEE ============\n");  
         System.out.println("======= Constructor 1");
         PieceWorkEmployee z = new PieceWorkEmployee(543, 431, "PWEKenny", 1254321);
@@ -128,8 +130,28 @@ public class Main {
         z1.setRatePerPiece(341);
         z1.setTotalPiecesFinished(34);
         z1.displayPWEmployee();
+
+        System.out.println("======= Constructor 3");
+        PieceWorkEmployee z2 = new PieceWorkEmployee();
+        z2.displayPWEmployee();
+        z2.setRatePerPiece(4231);
+        z2.setTotalPiecesFinished(134);
+        z2.setEmpID(341);
+        z2.setEmpName("PWEKenny2");
+        z2.displayPWEmployee();
         
+        System.out.println("======= Constructor 4");
+        PieceWorkEmployee z3 = new PieceWorkEmployee(1457, 457);
+        z3.displayPWEmployee();
+        z3.setEmpID(11341);
+        z3.setEmpName("PWEKenny3");
+        z3.displayPWEmployee();
         
+        System.out.println("======= Constructor 5");
+        Employee zE1 = new Employee("PWEKenny4", 11313);
+        PieceWorkEmployee z4 = new PieceWorkEmployee(231, 352,zE1);
+        z4.displayPWEmployee();
+
     }
 }
 
