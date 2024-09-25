@@ -10,31 +10,43 @@ package version3;
  */
 public class Name {
     
-    private String empName;
+    private String empFName;
+    private String empLName;
+    private char empMI;
     private int empID;
 
     public Name() {
     }
 
-    public Name(String empName) {
-        this.empName = empName;
-    }
-
-    public Name(int empID) {
+    public Name(String empFName, String empLName, char empMI, int empID) {
+        this.empFName = empFName;
+        this.empLName = empLName;
+        this.empMI = empMI;
         this.empID = empID;
     }
 
-    public Name(String empName, int empID) {
-        this.empName = empName;
-        this.empID = empID;
+    public String getEmpFName() {
+        return empFName;
     }
 
-    public String getEmpName() {
-        return empName;
+    public void setEmpFName(String empFName) {
+        this.empFName = empFName;
     }
 
-    public void setEmpName(String empName) {
-        this.empName = empName;
+    public String getEmpLName() {
+        return empLName;
+    }
+
+    public void setEmpLName(String empLName) {
+        this.empLName = empLName;
+    }
+
+    public char getEmpMI() {
+        return empMI;
+    }
+
+    public void setEmpMI(char empMI) {
+        this.empMI = empMI;
     }
 
     public int getEmpID() {
@@ -44,6 +56,5 @@ public class Name {
     public void setEmpID(int empID) {
         this.empID = empID;
     }
-    
     
 }

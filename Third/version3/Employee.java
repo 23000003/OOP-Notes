@@ -3,62 +3,48 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package version3;
-import java.time.LocalDateTime;
 /**
  *
  * @author User
  */
 public class Employee {
     
-    private String empName;
-    private int empID;
+    private Name employeeName;
+    private Date employeeBday;
+    private Date employeeHired;
     
-    Name name = new Name();
-    LocalDateTime myObj = LocalDateTime.now();
     
     public Employee() {
     }
-
-    public Employee(String empName) {
-        this.empName = empName;
-    }
-
-    public Employee(int empID) {
-        this.empID = empID;
-    }
-
-    public Employee(String empName, int empID) {
-        this.empName = empName;
-        this.empID = empID;
+   
+    public Employee(Name name){
+        this.employeeName = new Name(name.getEmpFName(), name.getEmpLName(), name.getEmpMI(), name.getEmpID());
     }
     
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
-
-    public int getEmpID() {
-        return empID;
-    }
-
-    public void setEmpID(int empID) {
-        this.empID = empID;
+    public Employee(Date hired, Date birthday){
+        this.employeeHired = new Date(hired.getYear(), hired.getMonth(), hired.getDay());
+        this.employeeBday = new Date(birthday.getYear(), birthday.getMonth(), birthday.getDay());
     }
     
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Employee ID: ").append(this.getEmpID()).append("\n");
-        sb.append("Employee Name: ").append(this.getEmpName()).append("\n");
-        
-        return sb.toString();
+    public Employee(Date hired, Date birthday, Name name){
+        this.employeeName = new Name(name.getEmpFName(), name.getEmpLName(), name.getEmpMI(), name.getEmpID());
+        this.employeeHired = new Date(hired.getYear(), hired.getMonth(), hired.getDay());
+        this.employeeBday = new Date(birthday.getYear(), birthday.getMonth(), birthday.getDay());
     }
     
-    public void displayEmployeeDetails(){
-        System.out.println(this); //toString() Override
+    public Employee(String empFName, String empLName, char empMI, int empID){
+        this(empFName, empLName, empMI, empID, 0, 0, 0, 0, 0, 0);
     }
+    
+    public Employee(int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay){
+        this(null, null, ' ', 0, bYear, bMonth, bDay, hYear, hMonth, hDay);
+    }
+    
+    public Employee(String empFName, String empLName, char empMI, int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay){
+        this.employeeName = new Name(empFName, empLName, empMI, empID);
+        this.employeeBday = new Date(bYear, bMonth, bDay);
+        this.employeeHired = new Date(hYear, hMonth, hDay);
+    }
+    
+    
 }

@@ -52,10 +52,14 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
                 .append(this.getBaseSalary());
         return sb.toString();
     }
+    @Override
+    public double computeSalary(){
+        return super.computeSalary() + this.baseSalary;
+    }
     
     public void displayBasedPEmployee(){
         System.out.println(this);
-        double x = this.baseSalary + computeSalary();
+        double x = this.computeSalary();
         System.out.println("Computed Salary: " + x + "\n");
     }
 }
