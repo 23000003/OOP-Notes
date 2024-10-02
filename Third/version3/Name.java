@@ -12,13 +12,13 @@ public class Name {
     
     private String empFName;
     private String empLName;
-    private char empMI;
+    private String empMI;
     private int empID;
 
     public Name() {
     }
 
-    public Name(String empFName, String empLName, char empMI, int empID) {
+    public Name(String empFName, String empLName, String empMI, int empID) {
         this.empFName = empFName;
         this.empLName = empLName;
         this.empMI = empMI;
@@ -41,11 +41,11 @@ public class Name {
         this.empLName = empLName;
     }
 
-    public char getEmpMI() {
+    public String getEmpMI() {
         return empMI;
     }
 
-    public void setEmpMI(char empMI) {
+    public void setEmpMI(String empMI) {
         this.empMI = empMI;
     }
 
@@ -55,6 +55,20 @@ public class Name {
 
     public void setEmpID(int empID) {
         this.empID = empID;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Employee ID: ").append(this.getEmpID()).append("\n")
+                .append("Employee Name: ").append(this.getEmpFName()).append(" ")
+                .append(this.getEmpMI()).append(" ").append(this.getEmpLName());
+        
+        return sb.toString();
+    }
+    
+    public void displayNameDetails(){
+        System.out.println(this);
     }
     
 }

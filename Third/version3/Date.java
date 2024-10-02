@@ -15,8 +15,8 @@ public class Date {
 
     public Date(int Year, int Month, int Day) {
         this.Year = Year;
-        this.Month = Month;
-        this.Day = Day;
+        this.Month = Month % 12 == 0 ? 12 : Month % 12;
+        this.Day = Day % 30 == 0 ? 30 : Day % 30;
     }
 
     public int getYear() {
@@ -32,7 +32,7 @@ public class Date {
     }
 
     public void setMonth(int Month) {
-        this.Month = Month;
+        this.Month = Month % 12 == 0 ? 12 : Month % 12;
     }
 
     public int getDay() {
@@ -40,7 +40,20 @@ public class Date {
     }
 
     public void setDay(int Day) {
-        this.Day = Day;
+        this.Day = Day % 30 == 30 ? 1 : Day % 30;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getYear()).append("/").append(this.getMonth())
+                .append("/").append(this.getDay());
+        
+        return sb.toString();
     }
     
+    public void displayDateDetails(){
+        System.out.println(this); //toString() Override
+    }
+ 
 }
