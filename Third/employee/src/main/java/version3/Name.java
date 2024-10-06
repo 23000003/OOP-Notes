@@ -13,16 +13,14 @@ public class Name {
     private String empFName;
     private String empLName;
     private String empMI;
-    private int empID;
 
     public Name() {
     }
 
-    public Name(String empFName, String empLName, String empMI, int empID) {
+    public Name(String empFName, String empLName, String empMI) {
         this.empFName = empFName;
         this.empLName = empLName;
         this.empMI = empMI;
-        this.empID = empID;
     }
 
     public String getEmpFName() {
@@ -49,19 +47,11 @@ public class Name {
         this.empMI = empMI;
     }
 
-    public int getEmpID() {
-        return empID;
-    }
-
-    public void setEmpID(int empID) {
-        this.empID = empID;
-    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Employee ID: ").append(this.getEmpID()).append("\n")
-                .append("Employee Name: ").append(this.getEmpFName()).append(" ")
+        sb.append("Employee Name: ").append(this.getEmpFName()).append(" ")
                 .append(this.getEmpMI()).append(" ").append(this.getEmpLName());
         
         return sb.toString();

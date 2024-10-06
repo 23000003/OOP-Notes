@@ -14,30 +14,34 @@ public class PieceWorkEmployee extends Employee {
     private double ratePerPiece;
 
     public PieceWorkEmployee() {
+        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0, 0);
+      
     }
 
-    public PieceWorkEmployee(Name name) {
-        super(name);
+    public PieceWorkEmployee(int totalPiecesFinished, double ratePerPiece) {
+        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, totalPiecesFinished, ratePerPiece);
+    }
+    
+    public PieceWorkEmployee(Name name, int empID) {
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0, 0);
     }
 
     public PieceWorkEmployee(Date hired, Date birthday) {
-        super(hired, birthday);
-    }
-    
-    public PieceWorkEmployee(int totalPiecesFinished, double ratePerPiece) {
-        this.totalPiecesFinished = totalPiecesFinished;
-        this.ratePerPiece = ratePerPiece;
+        this(hired, birthday, new Name("x", "x", "x"), -1, 0, 0);
     }
 
-    public PieceWorkEmployee(Date hired, Date birthday, Name name, int totalPiecesFinished, double ratePerPiece) {
-        super(hired, birthday, name);
+    public PieceWorkEmployee(Date hired, Date birthday, Name name, int empID, int totalPiecesFinished, double ratePerPiece) {
+        super(hired, birthday, name, empID);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
 
 
-    public PieceWorkEmployee(String empFName, String empLName, String empMI, int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay) {
+    public PieceWorkEmployee(String empFName, String empLName, String empMI, int empID, int bYear, 
+                int bMonth, int bDay, int hYear, int hMonth, int hDay, int totalPiecesFinished, double ratePerPiece) {
         super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay);
+        this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
     }
     
 

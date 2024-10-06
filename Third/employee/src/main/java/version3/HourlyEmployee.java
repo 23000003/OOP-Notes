@@ -14,29 +14,32 @@ public class HourlyEmployee extends Employee {
     private double ratePerHour;
 
     public HourlyEmployee() {
+        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0, 0);
     }
 
-    public HourlyEmployee(Name name) {
-        super(name);
+    public HourlyEmployee(Name name, int empID) {
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0, 0);
     }
 
     public HourlyEmployee(Date hired, Date birthday) {
-        super(hired, birthday);
+        this(hired, birthday, new Name("x", "x", "x"), -1, 0, 0);
     }
     
     public HourlyEmployee(float totalHoursWorked, double ratePerHour) {
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), new Name("x", "x", "x"), -1, totalHoursWorked, ratePerHour);
+    }
+
+    public HourlyEmployee(Date hired, Date birthday, Name name, int empID, float totalHoursWorked, double ratePerHour) {
+        super(hired, birthday, name, empID);
         this.totalHoursWorked = totalHoursWorked;
         this.ratePerHour = ratePerHour;
     }
 
-    public HourlyEmployee(Date hired, Date birthday, Name name, float totalHoursWorked, double ratePerHour) {
-        super(hired, birthday, name);
-        this.totalHoursWorked = totalHoursWorked;
-        this.ratePerHour = ratePerHour;
-    }
-
-    public HourlyEmployee(String empFName, String empLName, String empMI, int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay) {
+    public HourlyEmployee(String empFName, String empLName, String empMI, int empID, int bYear, 
+            int bMonth, int bDay, int hYear, int hMonth, int hDay, float totalHoursWorked, double ratePerhour) {
         super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay);
+        this.totalHoursWorked = totalHoursWorked;
+        this.ratePerHour = ratePerhour;
     }
 
     public float getTotalHoursWorked() {

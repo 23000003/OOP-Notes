@@ -14,31 +14,30 @@ public class CommissionEmployee extends Employee {
     private double totalSales;
 
     public CommissionEmployee() {
+        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0);
     }
 
-    public CommissionEmployee(Name name) {
-        super(name);
-    }
-
-    public CommissionEmployee(double totalSales) {
+     public CommissionEmployee(double totalSales) {
         this.totalSales = totalSales;
+    }
+     
+    public CommissionEmployee(Name name, int empID) {
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0);
     }
 
     public CommissionEmployee(Date hired, Date birthday) {
-        super(hired, birthday);
+        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
     }
     
-    public CommissionEmployee(Date hired, Date birthday, Name name) {
-        super(hired, birthday, name);
-    }
-
-    public CommissionEmployee(Date hired, Date birthday, Name name, double totalSales) {
-        super(hired, birthday, name);
+    public CommissionEmployee(Date hired, Date birthday, Name name, int empID, double totalSales) {
+        super(hired, birthday, name, empID);
         this.totalSales = totalSales;
     }
 
-    public CommissionEmployee(String empFName, String empLName, String empMI, int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay) {
+    public CommissionEmployee(String empFName, String empLName, String empMI, int empID, 
+                int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, int totalSales) {
         super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay);
+        this.totalSales = totalSales;
     }
     
     public double getTotalSales() {

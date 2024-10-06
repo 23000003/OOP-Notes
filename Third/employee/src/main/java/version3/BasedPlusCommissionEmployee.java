@@ -13,27 +13,30 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
     private double baseSalary;
 
     public BasedPlusCommissionEmployee() {
-    }
-
-    public BasedPlusCommissionEmployee(Name name) {
-        super(name);
+        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0);
     }
 
     public BasedPlusCommissionEmployee(double baseSalary) {
-        this.baseSalary = baseSalary;
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), new Name("x", "x", "x"), -1, baseSalary);
     }
 
+    public BasedPlusCommissionEmployee(Name name, int empID) {
+        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0);
+    }
+    
     public BasedPlusCommissionEmployee(Date hired, Date birthday) {
-        super(hired, birthday);
+        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
     }
 
-    public BasedPlusCommissionEmployee(Date hired, Date birthday, Name name, double baseSalary) {
-        super(hired, birthday, name);
+    public BasedPlusCommissionEmployee(Date hired, Date birthday, Name name, int empID, double baseSalary) {
+        super(hired, birthday, name, empID, 0); //0 is from totalsales cuz of super
         this.baseSalary = baseSalary;
     }
 
-    public BasedPlusCommissionEmployee(String empFName, String empLName, String empMI, int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay) {
-        super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay);
+    public BasedPlusCommissionEmployee(String empFName, String empLName, String empMI, 
+                int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, double baseSalary) {
+        super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay, 0);
+        this.baseSalary = baseSalary;
     }
     
     public double getBaseSalary() {
@@ -52,6 +55,7 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
                 .append(this.getBaseSalary());
         return sb.toString();
     }
+    
     @Override
     public double computeSalary(){
         return super.computeSalary() + this.baseSalary;
