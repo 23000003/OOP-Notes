@@ -17,6 +17,11 @@ public class Name {
     public Name() {
     }
 
+    public Name(String empFName, String empLName) {
+        this.empFName = empFName;
+        this.empLName = empLName;
+    }
+    
     public Name(String empFName, String empLName, String empMI) {
         this.empFName = empFName;
         this.empLName = empLName;
@@ -51,9 +56,14 @@ public class Name {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Employee Name: ").append(this.getEmpFName()).append(" ")
-                .append(this.getEmpMI()).append(" ").append(this.getEmpLName());
+        sb.append("Employee Name: ").append(this.empFName).append(" ");
+    
+        if (this.getEmpMI() != null) {
+            sb.append(this.getEmpMI().charAt(0)).append(". ");
+        }
         
+        sb.append(this.getEmpLName());
+
         return sb.toString();
     }
     

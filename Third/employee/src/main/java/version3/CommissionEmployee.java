@@ -14,7 +14,7 @@ public class CommissionEmployee extends Employee {
     private double totalSales;
 
     public CommissionEmployee() {
-        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0);
+//        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0);
     }
 
      public CommissionEmployee(double totalSales) {
@@ -22,11 +22,13 @@ public class CommissionEmployee extends Employee {
     }
      
     public CommissionEmployee(Name name, int empID) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0);
+//        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0);
+        super(name, empID);
     }
 
     public CommissionEmployee(Date hired, Date birthday) {
-        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
+//        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
+        super(hired, birthday);
     }
     
     public CommissionEmployee(Date hired, Date birthday, Name name, int empID, double totalSales) {

@@ -14,20 +14,19 @@ public class PieceWorkEmployee extends Employee {
     private double ratePerPiece;
 
     public PieceWorkEmployee() {
-        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0, 0);
-      
     }
 
     public PieceWorkEmployee(int totalPiecesFinished, double ratePerPiece) {
-        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, totalPiecesFinished, ratePerPiece);
+        this.totalPiecesFinished = totalPiecesFinished;
+        this.ratePerPiece = ratePerPiece;
     }
     
     public PieceWorkEmployee(Name name, int empID) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0, 0);
+        super(name, empID);
     }
 
     public PieceWorkEmployee(Date hired, Date birthday) {
-        this(hired, birthday, new Name("x", "x", "x"), -1, 0, 0);
+        super(hired, birthday);
     }
 
     public PieceWorkEmployee(Date hired, Date birthday, Name name, int empID, int totalPiecesFinished, double ratePerPiece) {

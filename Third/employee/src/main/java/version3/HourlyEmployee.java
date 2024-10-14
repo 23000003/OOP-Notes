@@ -14,19 +14,19 @@ public class HourlyEmployee extends Employee {
     private double ratePerHour;
 
     public HourlyEmployee() {
-        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0, 0);
     }
 
     public HourlyEmployee(Name name, int empID) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0, 0);
+        super(name, empID);
     }
 
     public HourlyEmployee(Date hired, Date birthday) {
-        this(hired, birthday, new Name("x", "x", "x"), -1, 0, 0);
+        super(hired, birthday);
     }
     
     public HourlyEmployee(float totalHoursWorked, double ratePerHour) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), new Name("x", "x", "x"), -1, totalHoursWorked, ratePerHour);
+        this.totalHoursWorked = totalHoursWorked;
+        this.ratePerHour = ratePerHour;
     }
 
     public HourlyEmployee(Date hired, Date birthday, Name name, int empID, float totalHoursWorked, double ratePerHour) {

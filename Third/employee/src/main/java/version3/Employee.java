@@ -91,9 +91,9 @@ public class Employee {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Employee ID: ").append(this.empID).append("\n").append(this.getEmployeeName().toString()).append("\n")
-                .append("Birthdate: ").append(this.getEmployeeBday().toString()).append("\n")
-                .append("Date Hired: ").append(this.getEmployeeHired().toString()).append("\n");
+        sb.append("Employee ID: ").append(this.empID).append("\n").append(this.employeeName).append("\n")
+                .append("Birthdate: ").append(this.employeeBday).append("\n")
+                .append("Date Hired: ").append(this.employeeHired).append("\n");
         
         return sb.toString();
     }

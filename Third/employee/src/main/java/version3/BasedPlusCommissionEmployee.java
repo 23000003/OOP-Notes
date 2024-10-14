@@ -13,19 +13,18 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
     private double baseSalary;
 
     public BasedPlusCommissionEmployee() {
-        this("x", "x", "x", -1, -1, -1, -1, -1, -1, -1, 0);
     }
 
     public BasedPlusCommissionEmployee(double baseSalary) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), new Name("x", "x", "x"), -1, baseSalary);
+        this.baseSalary = baseSalary;
     }
 
     public BasedPlusCommissionEmployee(Name name, int empID) {
-        this(new Date(-1, -1, -1), new Date(-1, -1, -1), name, empID, 0);
+        super(name, empID);
     }
     
     public BasedPlusCommissionEmployee(Date hired, Date birthday) {
-        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
+        super(hired, birthday);
     }
 
     public BasedPlusCommissionEmployee(Date hired, Date birthday, Name name, int empID, double baseSalary) {
