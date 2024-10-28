@@ -13,6 +13,15 @@ public class EmployeeRoster {
     private int count;
     private int max;
 
+    public EmployeeRoster(){
+    }
+    
+    public EmployeeRoster(Employee[] empList, int count, int max) {
+        this.empList = empList;
+        this.count = count;
+        this.max = max;
+    }
+    
     public Employee[] getEmpList() {
         return empList;
     }
@@ -48,37 +57,83 @@ public class EmployeeRoster {
     
     public Employee RemoveEmployee(int id)
     {
+        Employee toDelete = null;
         
+        for(int i = 0; i < count; i++){
+            if(empList[i].getEmpID() == id){
+                toDelete = empList[i];
+                
+                for (int j = i; j < count - 1; j++) {
+                    empList[j] = empList[j + 1];
+                }
+                count--;
+                break;
+            }
+        }
+        
+        return toDelete;
     }
     
     public int CountHE()
     {
+        int count = 0;
         
+        for(int i = 0; i < this.count; i++){
+           if(empList[i] instanceof HourlyEmployee){
+                count++;
+             }
+        }
+        
+        return count;
     }
     
     public int CountCE()
     {
+        int count = 0;
         
+        for(int i = 0; i < this.count; i++){
+            if(empList[i] instanceof CommissionEmployee){
+                count++;
+            }
+        }
+        
+        return count;
     }
     
     public int CountBCPE()
     {
-        
+        return 1;
     }
     
     public int CountPWE()
     {
+        int count = 0;
         
+        for(int i = 0; i < this.count; i++){
+            if(empList[i] instanceof PieceWorkEmployee){
+                count++;
+            }
+        }
+        
+        return count;
     }
     
     public void DisplayHE()
     {
-        
+        for(int i = 0; i < count; i++){
+            if(empList[i] instanceof HourlyEmployee h){
+               h.displayHourlyEmployee();
+            }
+        }
     }
     
     public void DisplayCE()
     {
-        
+        for(int i = 0; i < count; i++){
+            if(empList[i] instanceof CommissionEmployee c){
+               c.displayCommissionEmployee();
+            }
+        }
     }
     
     public void DisplayBCPE()
@@ -88,7 +143,11 @@ public class EmployeeRoster {
     
     public void DisplayPWE()
     {
-        
+        for(int i = 0; i < count; i++){
+            if(empList[i] instanceof PieceWorkEmployee p){
+               p.displayPWEmployee();
+            }
+        }
     }
     
     public void DisplayAllEmployee()
