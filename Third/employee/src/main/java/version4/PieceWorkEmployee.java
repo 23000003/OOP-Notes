@@ -60,7 +60,7 @@ public class PieceWorkEmployee extends Employee {
         this.ratePerPiece = ratePerPiece;
     }
    
-    private double computeSalary() {
+    public double computeSalary() {
 //        -> total pieces fionished * rate per piece
 //        -> in every hundred pieces finished an aditional bonus of 10*rate per piece
         int bonus = this.totalPiecesFinished / 100;

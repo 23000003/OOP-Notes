@@ -26,9 +26,10 @@ public class CommissionEmployee extends Employee {
         super(name, empID);
     }
 
-    public CommissionEmployee(Date hired, Date birthday) {
+    public CommissionEmployee(Date hired, Date birthday, double totalSales) {
 //        this(hired, birthday, new Name("x", "x", "x"), -1, 0);
         super(hired, birthday);
+        this.totalSales = totalSales;
     }
     
     public CommissionEmployee(Date hired, Date birthday, Name name, int empID, double totalSales) {
@@ -37,7 +38,7 @@ public class CommissionEmployee extends Employee {
     }
 
     public CommissionEmployee(String empFName, String empLName, String empMI, int empID, 
-                int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, int totalSales) {
+                int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, double totalSales) {
         super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay);
         this.totalSales = totalSales;
     }

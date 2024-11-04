@@ -23,18 +23,18 @@ public class BasedPlusCommissionEmployee extends CommissionEmployee {
         super(name, empID);
     }
     
-    public BasedPlusCommissionEmployee(Date hired, Date birthday) {
-        super(hired, birthday);
+    public BasedPlusCommissionEmployee(Date hired, Date birthday, double totalSales) {
+        super(hired, birthday, totalSales);
     }
 
-    public BasedPlusCommissionEmployee(Date hired, Date birthday, Name name, int empID, double baseSalary) {
-        super(hired, birthday, name, empID, 0); //0 is from totalsales cuz of super
+    public BasedPlusCommissionEmployee(Date hired, Date birthday, Name name, int empID, double baseSalary, double totalSales) {
+        super(hired, birthday, name, empID, 5123); //0 is from totalsales cuz of super
         this.baseSalary = baseSalary;
     }
 
     public BasedPlusCommissionEmployee(String empFName, String empLName, String empMI, 
-                int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, double baseSalary) {
-        super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay, 0);
+                int empID, int bYear, int bMonth, int bDay, int hYear, int hMonth, int hDay, double baseSalary, double totalSales) {
+        super(empFName, empLName, empMI, empID, bYear, bMonth, bDay, hYear, hMonth, hDay, totalSales);
         this.baseSalary = baseSalary;
     }
     

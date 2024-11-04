@@ -92,7 +92,9 @@ public class EmployeeRoster {
         int count = 0;
         
         for(int i = 0; i < this.count; i++){
-            if(empList[i] instanceof CommissionEmployee){
+            if(empList[i] instanceof CommissionEmployee && 
+                !(empList[i] instanceof BasedPlusCommissionEmployee))
+            {
                 count++;
             }
         }
@@ -102,7 +104,15 @@ public class EmployeeRoster {
     
     public int CountBCPE()
     {
-        return 1;
+        int count = 0;
+        
+        for(int i = 0; i < this.count; i++){
+            if(empList[i] instanceof BasedPlusCommissionEmployee){
+                count++;
+            }
+        }
+        
+        return count;
     }
     
     public int CountPWE()
@@ -130,7 +140,9 @@ public class EmployeeRoster {
     public void DisplayCE()
     {
         for(int i = 0; i < count; i++){
-            if(empList[i] instanceof CommissionEmployee c){
+            if(empList[i] instanceof CommissionEmployee c && 
+                    !(empList[i] instanceof BasedPlusCommissionEmployee))
+            {
                c.displayCommissionEmployee();
             }
         }
@@ -138,7 +150,11 @@ public class EmployeeRoster {
     
     public void DisplayBCPE()
     {
-        
+        for(int i = 0; i < count; i++){
+            if(empList[i] instanceof BasedPlusCommissionEmployee c){
+               c.displayBasedPEmployee();
+            }
+        }
     }
     
     public void DisplayPWE()
@@ -150,9 +166,34 @@ public class EmployeeRoster {
         }
     }
     
-    public void DisplayAllEmployee()
-    {
+    public void displayAllEmployee() {
+    System.out.printf("%-10s| %-25s| %-15s| %-15s| %-10s| %-30s\n", 
+                      "ID", "Name", "DateOfBirth", "DateHired", "Salary", "Type of Employee");
+    for (int i = 0; i < count; ++i) {
+        System.out.printf("%-10s| ", empList[i].getEmpID());
+        System.out.printf("%-20s| ", empList[i].getEmployeeName());
+        System.out.printf("%-15s| ", empList[i].getEmployeeBday());
+        System.out.printf("%-15s| ", empList[i].getEmployeeHired());
+
+        if (empList[i] instanceof BasedPlusCommissionEmployee b) 
+        {
+            System.out.printf("%-10.2f| ", b.computeSalary());
+        } 
+        else if (empList[i] instanceof CommissionEmployee c) 
+        {
+            System.out.printf("%-10.2f| ", c.computeSalary());
+        } 
+        else if (empList[i] instanceof HourlyEmployee h) 
+        {
+            System.out.printf("%-10.2f| ", h.computeSalary());
+        } 
+        else if (empList[i] instanceof PieceWorkEmployee p) 
+        {
+            System.out.printf("%-10.2f| ", p.computeSalary());
+        }
         
+        System.out.printf("%-30s|\n", empList[i].getClass().getSimpleName());
     }
-    
+    System.out.println();
+}
 }
