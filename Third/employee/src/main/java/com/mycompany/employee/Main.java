@@ -6,6 +6,7 @@ package com.mycompany.employee;
 //import version1.*;
 //import version2.*;
 //import version3.*;
+import java.util.ArrayList;
 import version5.*;
 
 /**
@@ -19,7 +20,7 @@ public class Main {
         EmployeeRoster roster = new EmployeeRoster();
         roster.setCount(0);
         roster.setMax(5);
-//        roster.setEmpList(new ArrayList<Employee>);
+        roster.setEmpList(new ArrayList<>());
         
         // =======================
         CommissionEmployee x = new CommissionEmployee(new Date(2352, 48, 43), 
