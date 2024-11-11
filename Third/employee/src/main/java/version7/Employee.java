@@ -7,7 +7,7 @@ package version7;
  *
  * @author User
  */
-public class Employee {
+public abstract class Employee implements IEmployeeInterface {
     
     private Name employeeName;
     private Date employeeBday;

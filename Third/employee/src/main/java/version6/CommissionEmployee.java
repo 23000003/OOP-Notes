@@ -51,7 +51,8 @@ public class CommissionEmployee extends Employee {
         this.totalSales = totalSales;
     }
     
-    protected double computeSalary(){
+    @Override
+    public double computeSalary(){
         
         double totalSales;
         

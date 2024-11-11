@@ -7,7 +7,7 @@ package version6;
  *
  * @author User
  */
-public class Employee {
+public abstract class Employee {
     
     private Name employeeName;
     private Date employeeBday;
@@ -87,6 +87,7 @@ public class Employee {
         this.employeeBday = bday;
     }
     
+    public abstract double computeSalary();
     
     @Override
     public String toString(){

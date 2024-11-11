@@ -60,6 +60,7 @@ public class PieceWorkEmployee extends Employee {
         this.ratePerPiece = ratePerPiece;
     }
    
+    @Override
     public double computeSalary() {
 //        -> total pieces fionished * rate per piece
 //        -> in every hundred pieces finished an aditional bonus of 10*rate per piece

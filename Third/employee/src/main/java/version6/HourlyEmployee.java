@@ -58,6 +58,7 @@ public class HourlyEmployee extends Employee {
         this.ratePerHour = ratePerHour;
     }
     
+    @Override
     public double computeSalary(){
         if(this.totalHoursWorked > 40){
             return this.ratePerHour * 40 + ((this.ratePerHour + this.ratePerHour / 2) * (this.totalHoursWorked - 40)); 
